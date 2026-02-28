@@ -1,0 +1,26 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  url: string;
+  icon?: string;
+}
+
+const { name, description, url, icon } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="card bg-base-100 shadow-sm hover:shadow-md transition-shadow duration-200"
+>
+  <div class="card-body items-center text-center">
+    {icon && <span class="text-4xl mb-2">{icon}</span>}
+    <h2 class="card-title">{name}</h2>
+    <p class="text-sm text-base-content/70">{description}</p>
+    <div class="card-actions mt-2">
+      <span class="badge badge-primary badge-outline">外部工具 ↗</span>
+    </div>
+  </div>
+</a>

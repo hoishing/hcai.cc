@@ -1,0 +1,10 @@
+[
+  {
+    "id": "ppt-doc-compressor",
+    "name": "PPT/Doc 壓縮器",
+    "description": "壓縮 PowerPoint 和 Word 文件大小的工具",
+    "url": "https://ppt-doc-compressor.hcai.cc",
+    "icon": "📄",
+    "tags": ["壓縮", "文件"]
+  }
+]

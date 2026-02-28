@@ -1,0 +1,77 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: "/astrology/", label: "占星" },
+  { href: "/psychology/", label: "心理學" },
+  { href: "/mbti/", label: "MBTI" },
+  { href: "/tarot/", label: "塔羅" },
+  { href: "/tools/", label: "小工具" },
+];
+---
+
+<div class="navbar bg-base-100 shadow-sm sticky top-0 z-50">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h8m-8 6h16"></path>
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+      >
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[{ active: currentPath.startsWith(item.href) }]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <a href="/" class="btn btn-ghost flex flex-col items-start gap-0 h-auto py-1">
+      <span class="text-xl leading-tight">hcai.cc</span>
+      <span class="text-xs font-normal text-base-content/60 leading-tight">海成和 AI 一起探討的領域</span>
+    </a>
+  </div>
+
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[{ active: currentPath.startsWith(item.href) }]}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <div class="navbar-end">
+    <ThemeToggle />
+  </div>
+</div>

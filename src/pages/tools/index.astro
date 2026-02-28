@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ToolCard from "../../components/ToolCard.astro";
+import CardGrid from "../../components/CardGrid.astro";
+import { getCollection } from "astro:content";
+
+const tools = await getCollection("tools");
+---
+
+<BaseLayout title="小工具" description="AI 驅動的實用工具">
+  <h1 class="text-3xl font-bold mb-8">小工具</h1>
+  <CardGrid>
+    {
+      tools.map((tool) => (
+        <ToolCard
+          name={tool.data.name}
+          description={tool.data.description}
+          url={tool.data.url}
+          icon={tool.data.icon}
+        />
+      ))
+    }
+  </CardGrid>
+</BaseLayout>
