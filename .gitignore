@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+*.tsbuildinfo
+/build
+/coverage
+/dist
+/node_modules
+/out
+/tmp
