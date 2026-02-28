@@ -6,5 +6,13 @@
     "url": "https://ppt-doc-compressor.hcai.cc",
     "icon": "📄",
     "tags": ["壓縮", "文件"]
+  },
+  {
+    "id": "xmp-editor",
+    "name": "XMP 描述編輯器",
+    "description": "編輯和管理圖片 XMP 中繼資料的工具",
+    "url": "https://xmp-editor.hcai.cc",
+    "icon": "🏷️",
+    "tags": ["編輯", "中繼資料"]
   }
 ]
